@@ -4,7 +4,6 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import ContactForm from "@/components/contact/ContactForm";
 import { site } from "@/data/site";
-import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -24,23 +23,10 @@ export default function ContactPage({ searchParams }: PageProps<"/contact">) {
   return (
     <>
       <PageHero
-        crumb="Contact"
-        eyebrow={site.hours}
+        label="Contact"
         title={<>Contact <span className="text-brand">us</span></>}
         text="We’re always open to connect. Whether you have a question, need support, or are looking for industrial solutions — we’re just a message away."
-      >
-        <div className="flex flex-wrap gap-3">
-          <a href={site.phoneHref} className="btn-dark !px-5 !py-3">
-            <Phone className="size-4" /> {site.phone}
-          </a>
-          <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="btn !bg-white !px-5 !py-3 text-ink ring-1 ring-line hover:!bg-white/80">
-            <WhatsAppIcon className="size-4" /> WhatsApp
-          </a>
-          <a href={site.emailHref} className="btn !bg-white !px-5 !py-3 text-ink ring-1 ring-line hover:!bg-white/80">
-            <Mail className="size-4" /> Email us
-          </a>
-        </div>
-      </PageHero>
+      />
 
       <section className="container-x grid gap-10 py-8 sm:py-10 lg:grid-cols-[1.3fr_1fr]">
         <Suspense fallback={<ContactForm />}>

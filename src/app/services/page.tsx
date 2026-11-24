@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import PageHero from "@/components/ui/PageHero";
 import Catalog from "@/components/services/Catalog";
 import { redirect } from "next/navigation";
-import { categories, isCategoryId, products } from "@/data/products";
+import { isCategoryId, products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products & Services",
@@ -25,16 +25,9 @@ export default function ServicesPage({ searchParams }: PageProps<"/services">) {
   return (
     <>
       <PageHero
-        crumb="Products"
-        eyebrow="Sales · Rental · Service"
+        label="Products & Services"
         title={<>Our <span className="text-brand">products</span></>}
-        text="Pick a category to see the models we offer. Open any machine for photos and full specifications, or ask us for a quote."
-        facts={[
-          { value: categories.length, label: "Categories" },
-          { value: products.length, label: "Models" },
-          { value: "20 T", label: "Max capacity" },
-          { value: "Custom", label: "Builds" },
-        ]}
+        text="Sales, rental and service. Pick a category to see the models we offer, open any machine for photos and full specifications, or ask us for a quote."
       />
 
       <Suspense fallback={<Catalog initialCategory="forklifts" />}>

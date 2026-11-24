@@ -54,7 +54,7 @@ export const categories: Category[] = [
     short: "Forklifts",
     description:
       "Diesel and lithium-ion electric forklifts from 1.5 to 20 tons, plus side loaders for long, heavy and bulky loads.",
-    features: ["Diesel: 1.5 – 20 T", "Lithium-ion: 3 – 12 T", "Side loaders: 3 – 20 T"],
+    features: [],
     cover: fk("diesel-forklift-1-5-5t"),
     cutout: fk("diesel-forklift-1-5-5t"),
   },

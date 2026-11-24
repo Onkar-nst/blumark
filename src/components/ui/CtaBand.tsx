@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, Phone } from "lucide-react";
@@ -7,15 +8,19 @@ import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 export default function CtaBand({
   title = "Ready to elevate your operations?",
   text = "Get in touch with us for a customized quote tailored to your requirements.",
+  children,
 }: {
   eyebrow?: string;
   title?: string;
   text?: string;
+  /** Replaces the dark quote card on the left (e.g. a product enquiry form). */
+  children?: ReactNode;
 }) {
   return (
     <section className="container-x py-8 sm:py-12">
       <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
         {/* Quote */}
+        {children ?? (
         <div className="relative overflow-hidden rounded-lg bg-ink text-white">
           <div className="hazard h-2" aria-hidden />
           <div className="px-6 py-10 sm:px-10 sm:py-12">
@@ -41,6 +46,7 @@ export default function CtaBand({
             </div>
           </div>
         </div>
+        )}
 
         {/* Catalogue */}
         <Link href="/catalogue" className="group relative flex overflow-hidden rounded-lg bg-signal p-6 sm:p-8">

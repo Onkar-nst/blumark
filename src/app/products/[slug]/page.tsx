@@ -8,6 +8,7 @@ import ProductCard from "@/components/services/ProductCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CtaBand from "@/components/ui/CtaBand";
 import Brochure from "@/components/lead/Brochure";
+import ProductEnquiry from "@/components/product/ProductEnquiry";
 import { categories, products, productsBy } from "@/data/products";
 import { site, whatsappLink } from "@/data/site";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
@@ -191,7 +192,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
           <div className="container-x">
             <SectionHeading eyebrow="Brochure" title={`${p.model ?? p.name} brochure.`} />
             <div className="mt-8">
-              <Brochure brochure={p.brochure} slug={p.slug} />
+              <Brochure brochure={p.brochure} />
             </div>
           </div>
         </section>
@@ -242,6 +243,11 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
         </section>
       )}
 
+      {/* Enquiry form on the left, company catalogue on the right */}
+      <CtaBand>
+        <ProductEnquiry product={p} />
+      </CtaBand>
+
       {/* Related */}
       {related.length > 0 && (
         <section className="border-t border-line bg-white py-8 sm:py-12">
@@ -261,7 +267,6 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
         </section>
       )}
 
-      <CtaBand />
     </>
   );
 }

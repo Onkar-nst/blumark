@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Eye, Target } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Icon from "@/components/ui/Icon";
-import { coreValues, industries } from "@/data/content";
+import { coreValues } from "@/data/content";
+import IndustriesCarousel from "@/components/about/IndustriesCarousel";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -56,35 +55,69 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        crumb="About Us"
-        eyebrow="Who we are"
-        title={<>Engineering excellence for a <span className="text-brand">stronger tomorrow.</span></>}
-        text="Discover who we are, what drives us and how we are shaping the future of material handling across India."
-        facts={[
-          { value: "Mumbai", label: "Headquarters" },
-          { value: "10+", label: "Regions served" },
-          { value: products.length, label: "Models" },
-          { value: "1.5–20 T", label: "Forklift range" },
-        ]}
+        label="About Us"
+        title={<>Blumark <span className="text-brand">Industries</span></>}
+        text="Engineering excellence for a stronger tomorrow — premium material handling and warehousing solutions, sold, rented and serviced across India."
       />
 
       {/* Story */}
-      <section className="container-x grid gap-10 py-8 sm:py-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <section className="container-x grid gap-12 py-14 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
           <SectionHeading eyebrow="Our story" title="Premium material handling, built to last." />
-          <p className="mt-5 text-lg leading-relaxed text-muted">
-            <strong className="font-semibold text-ink">Blumark Industries</strong> specializes in premium material
-            handling and warehousing solutions. Our focus on quality engineering and durability ensures reliable
-            machinery for various industries.
-          </p>
+          <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted">
+            <p>
+              <strong className="font-semibold text-ink">Blumark Industries</strong> specializes in premium material
+              handling and warehousing solutions. Our focus on quality engineering and durability ensures reliable
+              machinery for various industries.
+            </p>
+            <p>
+              From our headquarters in Mumbai, we supply forklifts, pallet trucks, stackers, order pickers and scissor
+              platforms to warehouses, factories and distribution centres across India — from a 1.5 T diesel forklift
+              to a 20 T heavy-duty machine.
+            </p>
+            <p>
+              We don&apos;t stop at the sale. Every machine is backed by rental options, experienced service engineers and genuine
+              spares, and we look after other leading brands in your fleet too — so you deal with one team for all of
+              your material handling.
+            </p>
+          </div>
+
+          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-6 sm:grid-cols-4">
+            {[
+              { value: "Mumbai", label: "Headquarters" },
+              { value: "10+", label: "Regions served" },
+              { value: products.length, label: "Models" },
+              { value: "1.5–20 T", label: "Forklift range" },
+            ].map((f) => (
+              <div key={f.label} className="flex flex-col-reverse">
+                <dt className="mt-1.5 text-xs tracking-[0.1em] text-muted uppercase">{f.label}</dt>
+                <dd className="font-display text-2xl leading-none font-bold text-ink uppercase lg:text-[1.75rem]">
+                  {f.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 lg:self-start">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface">
-            <Image src="/images/products/full-electric-stacker.webp" alt="Full electric stacker" fill sizes="(min-width:1024px) 280px, 50vw" className="object-contain p-4" />
+        {/* Photos: the forklift fleet, with the Blumark warehouse range overlapping its corner */}
+        <div className="relative pb-16 sm:pb-24">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface">
+            <Image
+              src="/images/site/about-hero.webp"
+              alt="A fleet of forklifts and stackers in a warehouse"
+              fill
+              sizes="(min-width:1024px) 600px, 100vw"
+              className="object-cover"
+            />
           </div>
-          <div className="relative mt-12 aspect-[3/4] overflow-hidden rounded-lg bg-surface">
-            <Image src="/images/products/scissor-elevating-3.webp" alt="Scissor type elevating platform" fill sizes="(min-width:1024px) 280px, 50vw" className="object-contain p-4" />
+          <div className="absolute bottom-0 left-4 aspect-[16/9] w-[62%] overflow-hidden rounded-xl border-4 border-white bg-surface shadow-[0_20px_40px_-16px_rgba(12,17,29,0.35)] sm:-left-6">
+            <Image
+              src="/images/site/products-hero.webp"
+              alt="Blumark pallet trucks, stackers, order pickers and a scissor platform"
+              fill
+              sizes="(min-width:1024px) 380px, 62vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -107,28 +140,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Industries */}
-      <section className="container-x py-8 sm:py-10">
-        <SectionHeading eyebrow="Industries" title="Industries we serve." />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind) => (
-            <div key={ind.name} className="flex gap-3 rounded-lg bg-surface p-5">
-              <Icon name={ind.icon} className="mt-0.5 size-5 shrink-0 text-brand" strokeWidth={1.8} />
-              <div>
-                <h3 className="font-semibold text-ink">{ind.name}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted">{ind.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 text-muted">
-          Don&apos;t see your industry?{" "}
-          <Link href="/contact" className="font-semibold text-brand hover:underline">
-            Get in touch
-          </Link>
-          .
-        </p>
-      </section>
+      <IndustriesCarousel />
 
       <CtaBand />
     </>

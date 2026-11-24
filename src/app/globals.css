@@ -136,3 +136,11 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Preloader safety net: if its script never runs, the overlay still gets out of the way. */
+.preloader {
+  animation: preloader-failsafe 0.4s ease 5s forwards;
+}
+@keyframes preloader-failsafe {
+  to { opacity: 0; visibility: hidden; }
+}

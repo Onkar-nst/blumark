@@ -1,86 +1,38 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-
-export type HeroFact = { value: React.ReactNode; label: string };
-
-// Inner-page hero (the same on every page except Home): a full-width steel-grey band with a technical-drawing grid, with the text on the left and one
-// warehouse photo running to the right edge of the screen. A safety stripe closes it off.
+// Inner-page hero (the same on every page except Home): a short band with everything centred —
+// the page name as a small label, one big heading, a short yellow rule and a line of intro text.
+// Same blue-grey sky as the home hero (sampled from the company catalogue's fleet photo).
 export default function PageHero({
+  label,
   title,
   text,
-  crumb,
-  eyebrow,
-  facts,
-  children,
 }: {
-  eyebrow?: string;
+  /** Small upper-case label above the heading, usually the page name. */
+  label: string;
   title: React.ReactNode;
   text?: React.ReactNode;
-  crumb: string;
-  facts?: HeroFact[];
-  children?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-[#e6eaf0] text-ink">
-      {/* Engineering grid: fine 24px lines with a stronger line every 120px, like drawing paper */}
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#96a5ba] via-[#a7b6c9] to-[#bcc6d6] text-ink">
+      {/* Faint light grid, fading out towards the edges */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-70"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-25 [mask-image:radial-gradient(ellipse_at_50%_45%,black_25%,transparent_72%)]"
         style={{
           backgroundImage:
-            "linear-gradient(#cfd6e0 1px, transparent 1px), linear-gradient(90deg, #cfd6e0 1px, transparent 1px), linear-gradient(#dbe0e8 1px, transparent 1px), linear-gradient(90deg, #dbe0e8 1px, transparent 1px)",
-          backgroundSize: "120px 120px, 120px 120px, 24px 24px, 24px 24px",
+            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
-      <div className="container-x grid lg:grid-cols-2">
-        <div className="relative z-10 py-9 sm:py-12 lg:py-14 lg:pr-12">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-ink/50">
-            <Link href="/" className="hover:text-ink">
-              Home
-            </Link>
-            <ChevronRight className="size-3.5" />
-            <span className="text-ink/85">{crumb}</span>
-          </nav>
-          {eyebrow && <p className="eyebrow mt-6 !text-ink/60">{eyebrow}</p>}
-          <h1
-            className={`${eyebrow ? "mt-3" : "mt-6"} animate-rise text-5xl leading-[0.92] sm:text-6xl lg:text-[4.4rem]`}
-          >
-            {title}
-          </h1>
-          {text && (
-            <p className="mt-5 max-w-xl animate-rise text-lg leading-relaxed text-ink/70 [animation-delay:80ms]">
-              {text}
-            </p>
-          )}
-          {children && <div className="mt-7 animate-rise [animation-delay:120ms]">{children}</div>}
-
-          {facts && (
-            <dl className="mt-9 grid animate-rise grid-cols-2 gap-x-6 gap-y-5 border-t border-ink/15 pt-5 [animation-delay:160ms] sm:grid-cols-4">
-              {facts.map((f) => (
-                <div key={f.label} className="flex flex-col-reverse">
-                  <dt className="mt-1.5 text-xs tracking-[0.1em] text-ink/55 uppercase">{f.label}</dt>
-                  <dd className="font-display text-2xl leading-none font-bold uppercase lg:text-[1.75rem]">{f.value}</dd>
-                </div>
-              ))}
-            </dl>
-          )}
-        </div>
-
-        {/* Photo: below the text on phones, bleeding to the right edge on large screens */}
-        <div className="relative -mx-4 aspect-[16/10] bg-ink sm:-mx-6 lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:aspect-auto lg:w-[47vw]">
-          <Image
-            src="/images/hero/warehouse.jpg"
-            alt="A forklift moving pallets of stock through a warehouse"
-            fill
-            preload
-            sizes="(min-width: 1024px) 47vw, 100vw"
-            className="animate-swap object-cover"
-            style={{ objectPosition: "35% center" }}
-          />
-        </div>
+      <div className="container-x relative py-12 text-center sm:py-14 lg:py-16">
+        <p className="animate-rise text-sm font-semibold tracking-[0.18em] text-ink/70 uppercase">{label}</p>
+        <h1 className="mx-auto mt-4 max-w-5xl animate-rise text-5xl leading-[0.95] lg:text-6xl">{title}</h1>
+        <span aria-hidden className="mx-auto mt-6 block h-1 w-20 animate-rise rounded-full bg-signal [animation-delay:60ms]" />
+        {text && (
+          <p className="mx-auto mt-6 max-w-3xl animate-rise text-lg leading-relaxed text-ink/80 [animation-delay:100ms] sm:text-xl">
+            {text}
+          </p>
+        )}
       </div>
-      <div className="hazard relative z-10 h-1.5" aria-hidden />
     </section>
   );
 }

@@ -1,7 +1,6 @@
 import Hero from "@/components/home/Hero";
 import Clients from "@/components/home/Clients";
 import WhatWeDo from "@/components/home/WhatWeDo";
-import CategoryShowcase from "@/components/home/CategoryShowcase";
 import Catalog from "@/components/services/Catalog";
 import Network from "@/components/home/Network";
 import Brands from "@/components/home/Brands";
@@ -17,7 +16,6 @@ export default function HomePage() {
       <Hero />
       <Clients />
       <WhatWeDo />
-      <CategoryShowcase />
       <Catalog initialCategory="forklifts" compact />
       <Network />
       <Brands />

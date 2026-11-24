@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { categories, productsBy, type CategoryId } from "@/data/products";
 import ProductCard from "./ProductCard";
 
@@ -86,13 +86,6 @@ export default function Catalog({
               </Link>
             </div>
             <p className="mt-3 max-w-3xl leading-relaxed text-muted">{cat.description}</p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {cat.features.map((f) => (
-                <li key={f} className="flex items-center gap-1.5 rounded-md bg-soft px-3 py-1.5 text-sm text-ink/80">
-                  <Check className="size-4 text-brand" strokeWidth={2.5} /> {f}
-                </li>
-              ))}
-            </ul>
           </header>
           )}
 

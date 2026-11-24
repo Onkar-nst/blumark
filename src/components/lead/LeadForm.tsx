@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { ArrowRight, Lock } from "lucide-react";
+import { ArrowRight, CheckCircle2, Lock } from "lucide-react";
 import { submitLead, type LeadState } from "@/app/actions/lead";
 import { interests } from "@/data/leads";
 
@@ -14,20 +14,38 @@ export default function LeadForm({
   title = "Unlock the full details",
   text = "Tell us a little about yourself and we'll show the rest right away.",
   cta = "Unlock now",
+  pendingText = "Unlocking…",
+  doneText,
   dark = false,
+  className = "",
 }: {
   /** Where the form was filled, e.g. "blu-fe30" or "catalogue". */
   source: string;
   title?: string;
   text?: string;
   cta?: string;
+  pendingText?: string;
+  /** If set, shown in place of the form once it has been sent. */
+  doneText?: string;
   dark?: boolean;
+  className?: string;
 }) {
   const [state, action, pending] = useActionState<LeadState, FormData>(submitLead, { ok: false });
   const v = state.values ?? {};
+  const box = `rounded-lg p-6 sm:p-7 ${dark ? "bg-white" : "bg-soft"} ${className}`;
+
+  if (state.ok && doneText) {
+    return (
+      <div role="status" className={`${box} flex flex-col items-start justify-center`}>
+        <CheckCircle2 className="size-10 text-[#1ebe5a]" />
+        <h3 className="mt-4 font-display text-3xl leading-none font-bold text-ink uppercase">Thank you!</h3>
+        <p className="mt-2 max-w-md leading-relaxed text-muted">{doneText}</p>
+      </div>
+    );
+  }
 
   return (
-    <form action={action} className={`rounded-lg p-6 sm:p-7 ${dark ? "bg-white" : "bg-soft"}`}>
+    <form action={action} className={box}>
       <p className="flex items-center gap-2 text-sm font-medium text-ink/60">
         <Lock className="size-4" /> Free · takes 20 seconds
       </p>
@@ -70,7 +88,7 @@ export default function LeadForm({
       )}
 
       <button type="submit" disabled={pending} className="btn-dark group mt-5 w-full disabled:opacity-60">
-        {pending ? "Unlocking…" : cta}
+        {pending ? pendingText : cta}
         {!pending && <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />}
       </button>
       <p className="mt-3 text-xs text-muted">We&apos;ll only use these details to help with your enquiry.</p>

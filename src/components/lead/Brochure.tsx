@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Download, Lock } from "lucide-react";
 import type { Product } from "@/data/products";
 import { hasAccess } from "@/lib/access";
-import LeadForm from "./LeadForm";
 
 type B = NonNullable<Product["brochure"]>;
 
@@ -31,14 +30,18 @@ function Page({ src, caption, n, unoptimized = false }: { src: string; caption: 
 function LockedPage({ preview, caption, n }: { preview: string; caption: string; n: number }) {
   return (
     <figure>
-      <div className="relative overflow-hidden rounded-lg ring-1 ring-line">
+      {/* Locked pages jump to the enquiry form at the bottom of the page */}
+      <a href="#enquire" aria-label={`Unlock page ${n}: ${caption}`} className="group relative block overflow-hidden rounded-lg ring-1 ring-line">
         <Image src={preview} alt="" width={310} height={438} sizes="300px" className="w-full scale-105 opacity-80" />
         <div className="absolute inset-0 grid place-items-center bg-white/30">
-          <span className="grid size-12 place-items-center rounded-md bg-ink text-white">
-            <Lock className="size-5" />
+          <span className="flex flex-col items-center gap-2">
+            <span className="grid size-12 place-items-center rounded-md bg-ink text-white transition-transform group-hover:scale-105">
+              <Lock className="size-5" />
+            </span>
+            <span className="rounded bg-white/90 px-2.5 py-1 text-xs font-semibold text-ink">Unlock with the form below</span>
           </span>
         </div>
-      </div>
+      </a>
       <figcaption className="mt-2 text-sm text-muted">
         <span className="font-medium text-ink">Page {n}</span> · {caption}
       </figcaption>
@@ -46,7 +49,7 @@ function LockedPage({ preview, caption, n }: { preview: string; caption: string;
   );
 }
 
-async function Gated({ brochure, slug }: { brochure: B; slug: string }) {
+async function Gated({ brochure }: { brochure: B }) {
   const unlocked = await hasAccess();
   const start = brochure.pages.length;
 
@@ -71,19 +74,11 @@ async function Gated({ brochure, slug }: { brochure: B; slug: string }) {
       {brochure.locked.map((p, i) => (
         <LockedPage key={p.file} preview={p.preview} caption={p.caption} n={start + i + 1} />
       ))}
-      <div className="col-span-2 lg:col-span-4 lg:max-w-3xl">
-        <LeadForm
-          source={slug}
-          title="See the full brochure"
-          text={`Pages ${start + 1}–${start + brochure.locked.length} have the full technical parameters and drawings. Share your details to unlock them and download the PDF.`}
-          cta="Unlock brochure"
-        />
-      </div>
     </>
   );
 }
 
-export default function Brochure({ brochure, slug }: { brochure: B; slug: string }) {
+export default function Brochure({ brochure }: { brochure: B }) {
   return (
     <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
       {brochure.pages.map((p, i) => (
@@ -94,7 +89,7 @@ export default function Brochure({ brochure, slug }: { brochure: B; slug: string
           <LockedPage key={p.file} preview={p.preview} caption={p.caption} n={brochure.pages.length + i + 1} />
         ))}
       >
-        <Gated brochure={brochure} slug={slug} />
+        <Gated brochure={brochure} />
       </Suspense>
     </div>
   );

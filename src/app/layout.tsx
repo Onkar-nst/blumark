@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FooterReveal from "@/components/layout/FooterReveal";
+import Preloader from "@/components/layout/Preloader";
 import WhatsAppFab from "@/components/layout/WhatsAppFab";
 
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geist.variable} ${condensed.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <Preloader />
         <Navbar />
         {/* The page is a white sheet (z-10) lying over the footer; see FooterReveal */}
         <main className="relative z-10 flex-1 bg-white shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)] lg:rounded-b-[2rem]">

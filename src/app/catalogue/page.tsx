@@ -48,19 +48,14 @@ export default function CataloguePage() {
   return (
     <>
       <PageHero
-        crumb="Catalogue"
-        eyebrow="Free PDF download"
+        label="Catalogue"
         title={<>Company <span className="text-brand">catalogue</span></>}
-        text="Every Blumark machine in one place, with full technical parameters."
-        facts={[
-          { value: "21", label: "Pages" },
-          { value: "~5 MB", label: "PDF" },
-          { value: "4", label: "Ranges inside" },
-        ]}
+        text="Every Blumark machine in one free PDF, with full technical parameters."
       />
 
       <section className="container-x grid gap-10 py-10 sm:py-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-        <div>
+        {/* Cover stays in view while the list and form scroll past (desktop only) */}
+        <div className="lg:sticky lg:top-28 lg:self-start">
           <div className="relative mx-auto aspect-[900/1278] max-w-sm overflow-hidden rounded-lg shadow-xl ring-1 ring-line">
             <Image
               src="/brochures/catalogue-cover.jpg"
