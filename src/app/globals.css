@@ -1,26 +1,138 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-condensed), ui-sans-serif, system-ui, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Brand — from the Blumark logo */
+  --color-ink: #0c111d;
+  --color-navy-950: #0a0f1c;
+  --color-navy-900: #111827;
+  --color-navy-800: #1b2335;
+  --color-navy-700: #273049;
+  --color-brand: #31479e;
+  --color-brand-600: #2a3d8a;
+  --color-brand-400: #5a6fd0;
+  --color-violet: #4d3d98;
+  --color-cyan: #38c5d3;
+  /* Safety yellow — the colour of the machines */
+  --color-signal: #f5b800;
+  --color-signal-600: #e0a800;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-muted: #667085;
+  --color-line: #e7e9ee;
+  --color-soft: #f3f4f6;
+  --color-surface: #eef0f3;
+
+  --animate-rise: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-swap: swap 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-progress: progress 6s linear both;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes swap {
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* Network map: a dot "lands" with one ripple; Mumbai HQ keeps a slow beacon */
+  --animate-ping-once: ping-once 0.9s ease-out both;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  @keyframes ping-once {
+    from { opacity: 0.55; transform: scale(1); }
+    to { opacity: 0; transform: scale(2.6); }
+  }
+  @keyframes pulse-ring {
+    from { opacity: 0.35; transform: scale(0.9); }
+    70%, to { opacity: 0; transform: scale(2.4); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-ring { animation: none; opacity: 0; }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-[15px] font-medium transition-colors select-none;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+  /* Big headings: condensed, upper-case, like signage on the shop floor */
+  h1, h2 {
+    @apply font-display font-bold uppercase tracking-[-0.01em];
+  }
+  h3, h4 {
+    @apply tracking-tight;
+  }
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.16em] text-ink/55 uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply size-2 bg-signal;
+  }
+  /* Safety stripe, the same yellow/black as on the machines */
+  .hazard {
+    background: repeating-linear-gradient(-45deg, var(--color-signal) 0 14px, var(--color-ink) 14px 28px);
+  }
+  .btn-primary {
+    @apply btn bg-signal text-ink hover:bg-signal-600;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white hover:bg-navy-800;
+  }
+  .btn-outline {
+    @apply btn border border-ink/15 bg-white text-ink hover:bg-soft;
+  }
+  .btn-ghost-light {
+    @apply btn bg-white/10 text-white hover:bg-white/20;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
