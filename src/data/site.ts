@@ -6,7 +6,7 @@ export const site = {
   email: "sales@blumarkindustries.in",
   emailHref: "mailto:sales@blumarkindustries.in",
   whatsapp: "https://wa.me/917304935736",
-  hours: "Mon–Sat: 9am–6pm",
+  hours: "Mon to Sat: 9am to 6pm",
   serving: "Based in India | Serving PAN India",
   address: {
     line1: "1st Floor, D-104, Vrindavan CHS",

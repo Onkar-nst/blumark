@@ -22,13 +22,13 @@ export const whyChooseUs = [
   {
     title: "Precision Delivered",
     kicker: "Reliable Solutions",
-    text: "Every machine is made to work smoothly, accurately, and reliably — every time.",
+    text: "Every machine is made to work smoothly, accurately, and reliably, every time.",
     icon: "target",
   },
 ] as const;
 
 export const mission =
-  "To provide intelligent, efficient, and customizable material handling solutions that enhance operational productivity across industries. We are committed to delivering unmatched quality, exceptional customer service, and continuous innovation — empowering businesses to move smarter, safer, and faster.";
+  "To provide intelligent, efficient, and customizable material handling solutions that enhance operational productivity across industries. We are committed to delivering unmatched quality, exceptional customer service, and continuous innovation, empowering businesses to move smarter, safer, and faster.";
 
 export const vision =
   "To be a global leader in the material handling industry by redefining standards in quality, customization, and customer satisfaction.";
@@ -48,7 +48,7 @@ export const coreValues = [
   },
   {
     title: "Integrity & Transparency",
-    text: "We operate with honesty, clarity, and responsibility — building trust at every step.",
+    text: "We operate with honesty, clarity, and responsibility, building trust at every step.",
   },
   {
     title: "Operational Reliability",

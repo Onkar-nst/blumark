@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Logo({ light = false, className = "" }: { light?: boolean; className?: string }) {
   return (
-    <Link href="/" aria-label="Blumark Industries — Home" className={`inline-flex items-center gap-2.5 ${className}`}>
+    <Link href="/" aria-label="Blumark Industries home" className={`inline-flex items-center gap-2.5 ${className}`}>
       <Image src="/images/site/logo-mark.webp" alt="" width={36} height={38} />
       <span className="leading-none">
         <span className={`block text-lg font-extrabold tracking-wide ${light ? "text-white" : "text-ink"}`}>

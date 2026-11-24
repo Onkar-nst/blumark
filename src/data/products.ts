@@ -101,7 +101,7 @@ export const categories: Category[] = [
     name: "Scissor Type Work Platform",
     short: "Scissor Platforms",
     description:
-      "Our scissor lifts are built for aerial efficiency—offering stable, vertical elevation for indoor maintenance, inventory handling, and construction tasks.",
+      "Our scissor lifts are built for aerial efficiency, offering stable, vertical elevation for indoor maintenance, inventory handling, and construction tasks.",
     features: [
       "High-stability scissor structure",
       "Self-propelled and manual push models",
@@ -180,17 +180,17 @@ export const products: Product[] = [
   {
     slug: "lithium-forklift-3-4-5t",
     category: "forklifts",
-    name: "Lithium-ion Forklift 3–4.5\u00a0T",
+    name: "Lithium-ion Forklift 3 to 4.5\u00a0T",
     type: "Electric · Lithium battery",
     description:
-      "Battery forklifts for clean, quiet work indoors and out. The lithium battery comes with a 5-year warranty and charges fully in 2–2.5 hours, which suits multi-shift operations.",
+      "Battery forklifts for clean, quiet work indoors and out. The lithium battery comes with a 5-year warranty and charges fully in 2 to 2.5 hours, which suits multi-shift operations.",
     images: [
       { src: fk("lithium-forklift-3-4-5t") },
       { src: fk("lithium-forklift-3-4-5t-features"), caption: "Key features" },
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "3 – 4.5 T" },
+      { label: "Capacity", value: "3 to 4.5 T" },
       { label: "Power", value: "Lithium-ion" },
     ],
     specs: [],
@@ -205,7 +205,7 @@ export const products: Product[] = [
   {
     slug: "lithium-forklift-5-8t",
     category: "forklifts",
-    name: "Lithium-ion Forklift 5–8\u00a0T",
+    name: "Lithium-ion Forklift 5 to 8\u00a0T",
     type: "Electric · LiFePO₄ battery",
     description:
       "Heavy-capacity electric forklifts for 5 to 8 ton loads, with zero emissions and dual-gun fast charging.",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "5 – 8 T" },
+      { label: "Capacity", value: "5 to 8 T" },
       { label: "Power", value: "Lithium-ion" },
     ],
     specs: [],
@@ -231,7 +231,7 @@ export const products: Product[] = [
   {
     slug: "lithium-forklift-10-12t",
     category: "forklifts",
-    name: "Lithium-ion Forklift 10–12\u00a0T",
+    name: "Lithium-ion Forklift 10 to 12\u00a0T",
     type: "Electric · LiFePO₄ battery",
     description:
       "Electric power for very heavy loads: 10 to 12 ton capacity with a lithium iron phosphate battery and fast charging.",
@@ -241,7 +241,7 @@ export const products: Product[] = [
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "10 – 12 T" },
+      { label: "Capacity", value: "10 to 12 T" },
       { label: "Power", value: "Lithium-ion" },
     ],
     specs: [],
@@ -256,7 +256,7 @@ export const products: Product[] = [
   {
     slug: "diesel-forklift-1-5-5t",
     category: "forklifts",
-    name: "Diesel Forklift 1.5–5\u00a0T",
+    name: "Diesel Forklift 1.5 to 5\u00a0T",
     type: "Diesel",
     description:
       "Dependable everyday diesel forklifts for 1.5 to 5 ton loads, for yards, factories and loading bays.",
@@ -266,7 +266,7 @@ export const products: Product[] = [
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "1.5 – 5 T" },
+      { label: "Capacity", value: "1.5 to 5 T" },
       { label: "Power", value: "Diesel" },
     ],
     specs: [],
@@ -278,14 +278,14 @@ export const products: Product[] = [
       "Large non-slip pedals and a small, adjustable steering wheel",
     ],
     sheets: [
-      { src: sheet("diesel-forklift-1-5-5t-1"), caption: "Technical parameters · 1.5 – 3 T" },
-      { src: sheet("diesel-forklift-1-5-5t-2"), caption: "Technical parameters · 3.5 – 5 T" },
+      { src: sheet("diesel-forklift-1-5-5t-1"), caption: "Technical parameters · 1.5 to 3 T" },
+      { src: sheet("diesel-forklift-1-5-5t-2"), caption: "Technical parameters · 3.5 to 5 T" },
     ],
   },
   {
     slug: "diesel-forklift-6-10t",
     category: "forklifts",
-    name: "Diesel Forklift 6–10\u00a0T",
+    name: "Diesel Forklift 6 to 10\u00a0T",
     type: "Diesel",
     description: "Heavy-duty diesel forklifts for 6 to 10 ton loads, with operator safety built in.",
     images: [
@@ -294,7 +294,7 @@ export const products: Product[] = [
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "6 – 10 T" },
+      { label: "Capacity", value: "6 to 10 T" },
       { label: "Power", value: "Diesel" },
     ],
     specs: [],
@@ -310,7 +310,7 @@ export const products: Product[] = [
   {
     slug: "diesel-forklift-12-16t",
     category: "forklifts",
-    name: "Diesel Forklift 12–16\u00a0T",
+    name: "Diesel Forklift 12 to 16\u00a0T",
     type: "Diesel",
     description: "Big-capacity diesel forklifts for 12 to 16 ton loads, designed for easy operation and servicing.",
     images: [
@@ -319,7 +319,7 @@ export const products: Product[] = [
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "12 – 16 T" },
+      { label: "Capacity", value: "12 to 16 T" },
       { label: "Power", value: "Diesel" },
     ],
     specs: [],
@@ -335,7 +335,7 @@ export const products: Product[] = [
   {
     slug: "diesel-forklift-16-20t",
     category: "forklifts",
-    name: "Diesel Forklift 16–20\u00a0T",
+    name: "Diesel Forklift 16 to 20\u00a0T",
     type: "Diesel",
     description:
       "Our largest diesel forklifts, for 16 to 20 ton loads, with a factory-integrated hydraulic fork positioner.",
@@ -345,12 +345,12 @@ export const products: Product[] = [
     ],
     photo: true,
     highlights: [
-      { label: "Capacity", value: "16 – 20 T" },
+      { label: "Capacity", value: "16 to 20 T" },
       { label: "Power", value: "Diesel" },
     ],
     specs: [],
     features: [
-      "Box-type internal–external mast with all-round roller bearings for strength and stability",
+      "Box-type internal and external mast with all-round roller bearings for strength and stability",
       "Hydraulic fork positioner, adjustable from the operator's seat",
       "Low oil consumption turbocharged engine with high torque reserves",
       "Transverse oil-cylinder steering axle with full-hydraulic steering",
@@ -366,7 +366,7 @@ export const products: Product[] = [
       "Electric and diesel side loader forklifts from 3 to 20 tons, engineered for long, heavy and bulky loads.",
     images: [{ src: fk("side-loader-forklift") }, { src: fk("side-loader-forklift-2") }],
     highlights: [
-      { label: "Capacity", value: "3 – 20 T" },
+      { label: "Capacity", value: "3 to 20 T" },
       { label: "Power", value: "Electric & diesel" },
     ],
     specs: [],
@@ -389,8 +389,8 @@ export const products: Product[] = [
       { src: img("hand-pallet-3") },
     ],
     highlights: [
-      { label: "Capacity", value: "2.0 – 3.0 T" },
-      { label: "Max Lift", value: "185–200 mm" },
+      { label: "Capacity", value: "2.0 to 3.0 T" },
+      { label: "Max Lift", value: "185 to 200 mm" },
     ],
     specs: [
       { label: "Model", value: "BLU_HP20/25/30" },
@@ -414,11 +414,11 @@ export const products: Product[] = [
     description:
       "Stainless steel pallet trucks in ACS and HPS series, fitted with a high quality pump and nylon/PU wheels.",
     images: [
-      { src: img("ss-pallet-acs"), caption: "Stainless Steel Pallet Jack – ACS series" },
-      { src: img("ss-pallet-hps"), caption: "Stainless Pallet Truck – HPS Series" },
+      { src: img("ss-pallet-acs"), caption: "Stainless Steel Pallet Jack (ACS Series)" },
+      { src: img("ss-pallet-hps"), caption: "Stainless Pallet Truck (HPS Series)" },
     ],
     highlights: [
-      { label: "Capacity", value: "2.0 – 3.0 T" },
+      { label: "Capacity", value: "2.0 to 3.0 T" },
       { label: "Max Lift", value: "185/195 mm" },
     ],
     specs: [
@@ -469,7 +469,7 @@ export const products: Product[] = [
     images: [{ src: img("pallet-truck") }],
     highlights: [
       { label: "Capacity", value: "1.5 T" },
-      { label: "Roll Diameter", value: "500–1300 mm" },
+      { label: "Roll Diameter", value: "500 to 1300 mm" },
     ],
     specs: [
       { label: "Model", value: "BLU_RHP15" },
@@ -514,7 +514,7 @@ export const products: Product[] = [
     type: "Manual · All Terrain",
     model: "BLU_RTHP12",
     description:
-      "Adjustable 265–685 mm fork width and solid or pneumatic tyres to move loads across uneven, outdoor ground.",
+      "Adjustable 265 to 685 mm fork width and solid or pneumatic tyres to move loads across uneven, outdoor ground.",
     images: [{ src: img("pallet-truck") }],
     highlights: [
       { label: "Capacity", value: "1.2 T" },
@@ -559,7 +559,7 @@ export const products: Product[] = [
   {
     slug: "mechanic-lifter-sr200",
     category: "pallet-trucks",
-    name: "Hand Pallet Mechanic Lifter – SR200",
+    name: "Hand Pallet Mechanic Lifter (SR200)",
     type: "Manual · Roll Handling",
     model: "BLU/RP20",
     description:
@@ -614,7 +614,7 @@ export const products: Product[] = [
     type: "Full Electric",
     model: "BLU_FEHP15",
     description:
-      "Fully electric drive and lift — 0.75 kW drive motor and 0.5 kW lift motor on a 24V/20Ah battery.",
+      "Fully electric drive and lift: 0.75 kW drive motor and 0.5 kW lift motor on a 24V/20Ah battery.",
     images: [{ src: img("full-electric-pallet") }],
     highlights: [
       { label: "Capacity", value: "1.5 T" },
@@ -657,7 +657,7 @@ export const products: Product[] = [
     name: "Stainless Steel Digital Weighing Truck",
     type: "Manual · Weighing",
     description:
-      "Stainless steel pallet truck with an integrated digital weighing display — move and weigh in one step.",
+      "Stainless steel pallet truck with an integrated digital weighing display. Move and weigh in one step.",
     images: [{ src: img("cut-ss-weighing") }],
     highlights: [
       { label: "Build", value: "Stainless Steel" },
@@ -697,7 +697,7 @@ export const products: Product[] = [
   {
     slug: "electric-stacker-stand-on",
     category: "stackers",
-    name: "Electric Stacker – Stand on Platform",
+    name: "Electric Stacker (Stand on Platform)",
     type: "Full Electric · Stand On",
     description:
       "Stand-on platform stacker lifting 1500 kg up to 2900 mm, with an electromagnetic service brake.",
@@ -725,7 +725,7 @@ export const products: Product[] = [
     name: "Semi-Electric Stacker",
     type: "Semi Electric",
     description:
-      "Electric lifting with manual travel — a cost-effective step up from manual stacking.",
+      "Electric lifting with manual travel, a cost-effective step up from manual stacking.",
     images: [{ src: img("semi-electric-stacker") }],
     highlights: [
       { label: "Capacity", value: "1.5 T" },
@@ -737,7 +737,7 @@ export const products: Product[] = [
   {
     slug: "semi-electric-stacker-epm",
     category: "stackers",
-    name: "Semi-Electric Stacker – EPM Series",
+    name: "Semi-Electric Stacker (EPM Series)",
     type: "Semi Electric",
     description:
       "EPM series semi-electric stacker for repetitive lifting with minimal operator effort.",
@@ -752,7 +752,7 @@ export const products: Product[] = [
   {
     slug: "semi-electric-stacker-spn-fw",
     category: "stackers",
-    name: "Semi-Electric Stacker with Straddle Leg – SPN.FW",
+    name: "Semi-Electric Stacker with Straddle Leg (SPN.FW)",
     type: "Semi Electric · Straddle",
     description:
       "Straddle-leg semi-electric stacker (SPN.FW series) for handling closed and open pallets.",
@@ -767,7 +767,7 @@ export const products: Product[] = [
   {
     slug: "straddle-legs-stacker-gt",
     category: "stackers",
-    name: "Straddle Legs Stacker – GT Series",
+    name: "Straddle Legs Stacker (GT Series)",
     type: "Manual · Straddle",
     description:
       "Manual GT series stacker with straddle legs for stable lifting across variable heights.",
@@ -782,7 +782,7 @@ export const products: Product[] = [
   {
     slug: "heavy-duty-hand-stacker-pa",
     category: "stackers",
-    name: "Heavy Duty Hand Stacker – PA Series",
+    name: "Heavy Duty Hand Stacker (PA Series)",
     type: "Manual · Heavy Duty",
     description:
       "Heavy duty PA series hand stacker with a high quality hydraulic pump.",
@@ -797,7 +797,7 @@ export const products: Product[] = [
   {
     slug: "hydraulic-pallet-tilter-lt0892",
     category: "stackers",
-    name: "Hydraulic Pallet Tilter – LT0892",
+    name: "Hydraulic Pallet Tilter (LT0892)",
     type: "Manual · Hydraulic",
     description:
       "Hydraulic pallet tilter that lifts and tilts loads to an ergonomic working position.",
@@ -815,7 +815,7 @@ export const products: Product[] = [
     name: "Electric Counter Balance",
     type: "Electric · Counterbalance",
     description:
-      "Counterbalanced electric stacker — no straddle legs, so it can handle pallets of any base design.",
+      "Counterbalanced electric stacker with no straddle legs, so it can handle pallets of any base design.",
     images: [{ src: img("cut-counter-balance") }],
     highlights: [
       { label: "Drive", value: "Electric" },
@@ -917,7 +917,7 @@ export const products: Product[] = [
     images: [{ src: img("self-propelled-order-picker") }],
     highlights: [
       { label: "Capacity", value: "300 kg" },
-      { label: "Platform Height", value: "2.7 – 4.5 m" },
+      { label: "Platform Height", value: "2.7 to 4.5 m" },
     ],
     specs: [
       { label: "Capacity", value: "300 kg" },
@@ -946,7 +946,7 @@ export const products: Product[] = [
     images: [{ src: img("semi-electric-order-picker") }],
     highlights: [
       { label: "Capacity", value: "200 kg" },
-      { label: "Lift Height", value: "2.72 – 4.5 m" },
+      { label: "Lift Height", value: "2.72 to 4.5 m" },
     ],
     specs: [
       { label: "Capacity", value: "200 kg" },
@@ -976,7 +976,7 @@ export const products: Product[] = [
     images: [{ src: img("mini-scissor-1") }, { src: img("mini-scissor-2") }],
     highlights: [
       { label: "Capacity", value: "300 kg" },
-      { label: "Max Height", value: "1.7 – 4.8 m" },
+      { label: "Max Height", value: "1.7 to 4.8 m" },
     ],
     specs: [
       { label: "Capacity", value: "300 kg (with support leg)" },

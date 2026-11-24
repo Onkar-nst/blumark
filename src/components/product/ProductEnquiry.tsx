@@ -17,7 +17,7 @@ function Form({ product }: { product: Product }) {
       <LeadForm
         source={product.slug}
         title="See the full brochure"
-        text={`Pages ${start + 1}–${start + b.locked.length} have the full technical parameters and drawings. Share your details to unlock them and download the PDF.`}
+        text={`Pages ${start + 1} to ${start + b.locked.length} have the full technical parameters and drawings. Share your details to unlock them and download the PDF.`}
         cta="Unlock brochure"
         className="h-full"
       />

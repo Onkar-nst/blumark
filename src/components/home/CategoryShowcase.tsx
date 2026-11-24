@@ -59,7 +59,7 @@ export default function CategoryShowcase() {
           <div className="flex items-end justify-between gap-4 p-6 sm:p-7">
             <div>
               <h3 className="font-display text-5xl leading-none font-bold uppercase">{forklifts.name}</h3>
-              <p className="mt-2 text-white/65">Diesel 1.5–20 T · Lithium-ion 3–12 T · Side loaders</p>
+              <p className="mt-2 text-white/65">Diesel 1.5 to 20 T · Lithium-ion 3 to 12 T · Side loaders</p>
             </div>
             <Arrow light />
           </div>

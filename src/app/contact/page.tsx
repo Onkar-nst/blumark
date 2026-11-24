@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Blumark Industries — Kandivli (W), Mumbai. Call +91 7304935736 or email sales@blumarkindustries.in for quotes on material handling equipment.",
+    "Get in touch with Blumark Industries, Kandivli (W), Mumbai. Call +91 7304935736 or email sales@blumarkindustries.in for quotes on material handling equipment.",
 };
 
 const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapQuery)}`;
@@ -25,7 +25,7 @@ export default function ContactPage({ searchParams }: PageProps<"/contact">) {
       <PageHero
         label="Contact"
         title={<>Contact <span className="text-brand">us</span></>}
-        text="We’re always open to connect. Whether you have a question, need support, or are looking for industrial solutions — we’re just a message away."
+        text="We’re always open to connect. Whether you have a question, need support, or are looking for industrial solutions, we’re just a message away."
       />
 
       <section className="container-x grid gap-10 py-8 sm:py-10 lg:grid-cols-[1.3fr_1fr]">

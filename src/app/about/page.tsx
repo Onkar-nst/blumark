@@ -57,7 +57,7 @@ export default function AboutPage() {
       <PageHero
         label="About Us"
         title={<>Blumark <span className="text-brand">Industries</span></>}
-        text="Engineering excellence for a stronger tomorrow — premium material handling and warehousing solutions, sold, rented and serviced across India."
+        text="Engineering excellence for a stronger tomorrow: premium material handling and warehousing solutions, sold, rented and serviced across India."
       />
 
       {/* Story */}
@@ -72,12 +72,12 @@ export default function AboutPage() {
             </p>
             <p>
               From our headquarters in Mumbai, we supply forklifts, pallet trucks, stackers, order pickers and scissor
-              platforms to warehouses, factories and distribution centres across India — from a 1.5 T diesel forklift
+              platforms to warehouses, factories and distribution centres across India, from a 1.5 T diesel forklift
               to a 20 T heavy-duty machine.
             </p>
             <p>
               We don&apos;t stop at the sale. Every machine is backed by rental options, experienced service engineers and genuine
-              spares, and we look after other leading brands in your fleet too — so you deal with one team for all of
+              spares, and we look after other leading brands in your fleet too, so you deal with one team for all of
               your material handling.
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
               { value: "Mumbai", label: "Headquarters" },
               { value: "10+", label: "Regions served" },
               { value: products.length, label: "Models" },
-              { value: "1.5–20 T", label: "Forklift range" },
+              { value: "1.5 to 20 T", label: "Forklift range" },
             ].map((f) => (
               <div key={f.label} className="flex flex-col-reverse">
                 <dt className="mt-1.5 text-xs tracking-[0.1em] text-muted uppercase">{f.label}</dt>

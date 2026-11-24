@@ -46,7 +46,7 @@ export default function ContactForm({ defaultProduct = "" }: { defaultProduct?: 
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subject = `Enquiry${f.product ? ` – ${f.product}` : ""} from ${f.firstName}`;
+    const subject = `Enquiry${f.product ? `: ${f.product}` : ""} from ${f.firstName}`;
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(compose(f))}`;
     setSent(true);
   };
