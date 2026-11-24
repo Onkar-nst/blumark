@@ -44,10 +44,13 @@ export default function Clients() {
 
       {/* Running carousel: the list is rendered twice and slides by half its width, so it loops seamlessly.
           It pauses on hover, and the global reduced-motion rule stops it for users who prefer less motion. */}
-      <div className="group relative mt-5 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-        <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-          <Row />
-          <Row hidden />
+      {/* Kept within the page width, so it lines up with the heading row above */}
+      <div className="container-x mt-5">
+        <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+          <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+            <Row />
+            <Row hidden />
+          </div>
         </div>
       </div>
     </section>

@@ -25,17 +25,13 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[35%] bg-gradient-to-b from-transparent to-white/25"
       />
-      {/* Brand wordmark behind the machine */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute right-[-1.5vw] bottom-[31%] -z-10 hidden font-display text-[15vw] leading-none font-extrabold tracking-tight text-white/35 uppercase select-none lg:block"
-      >
-        Blumark
-      </span>
 
-      <div className="container-x grid lg:grid-cols-[0.95fr_1.25fr] lg:gap-6">
-        <div className="relative z-10 pt-8 sm:pt-10 lg:self-center lg:py-14">
-          <p className="eyebrow animate-rise !text-ink/75">Manufacturer · Sales · Rental · Service</p>
+      {/* Row 1: the eyebrow and the live job status, on one line. Row 2: the pitch and the 3D stage. */}
+      <div className="container-x grid pt-8 sm:pt-10 lg:grid-cols-[0.95fr_1.25fr] lg:grid-rows-[auto_1fr] lg:gap-x-6 lg:pt-10">
+        <p className="eyebrow relative z-10 animate-rise !text-ink/75 lg:col-start-1 lg:row-start-1 lg:self-center">
+          Manufacturer · Sales · Rental · Service
+        </p>
+        <div className="relative z-10 lg:col-start-1 lg:row-start-2 lg:self-center lg:pb-14">
           <h1 className="mt-4 animate-rise text-[2.6rem] leading-[0.9] text-ink [animation-delay:80ms] sm:text-6xl xl:text-[4.4rem]">
             Your trusted partner in <span className="text-brand">industrial lifting</span> solutions.
           </h1>
@@ -54,7 +50,17 @@ export default function Hero() {
           </div>
         </div>
 
-        <ForkliftStage className="h-[290px] animate-rise [animation-delay:220ms] sm:h-[400px] lg:h-[560px] lg:self-end xl:h-[600px]" />
+        {/* Brand wordmark, centred behind the forklift (same grid cell as the 3D stage, painted underneath) */}
+        <div aria-hidden className="pointer-events-none relative -z-10 hidden lg:col-start-2 lg:row-start-2 lg:block">
+          <span className="absolute bottom-[24%] left-1/2 -translate-x-1/2 font-display text-[12.5vw] leading-none font-extrabold tracking-tight whitespace-nowrap text-white/35 uppercase select-none 2xl:text-[11rem]">
+            Blumark
+          </span>
+        </div>
+
+        <ForkliftStage
+          statusClassName="relative z-10 mt-7 animate-rise justify-self-start [animation-delay:220ms] lg:col-start-2 lg:row-start-1 lg:mt-0 lg:self-center lg:justify-self-end"
+          className="h-[290px] animate-rise [animation-delay:220ms] sm:h-[400px] lg:col-start-2 lg:row-start-2 lg:h-[520px] lg:self-end xl:h-[560px]"
+        />
       </div>
       <div className="hazard h-1.5" aria-hidden />
     </section>
